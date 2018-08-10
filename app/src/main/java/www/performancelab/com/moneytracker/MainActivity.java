@@ -3,6 +3,7 @@ package www.performancelab.com.moneytracker;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,6 +14,9 @@ import www.performancelab.com.moneytracker.Adapter.TestAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "MainActivity: ";
+    ArrayList<Item> list = new ArrayList<>();
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +26,12 @@ public class MainActivity extends AppCompatActivity {
         final Button add = (Button)findViewById(R.id.addProduct);
         final Button clearListView = (Button)findViewById(R.id.clearList);
         final ListView items = findViewById(R.id.items);
-        final ArrayList<Item> list = new ArrayList<>();
+
+        if(savedInstanceState == null || !savedInstanceState.containsKey("key")) {
+            list.clear();
+        } else {
+            list = savedInstanceState.getParcelableArrayList("key");
+        }
         final TestAdapter adapter =  new TestAdapter(MainActivity.this, list);
 
 //        for (int i = 0; i < 20; i++){
@@ -53,5 +62,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putParcelableArrayList("key", list);
+        super.onSaveInstanceState(outState);
     }
 }
