@@ -3,11 +3,11 @@
       android:text="@string/Clear"-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:background="@drawable/bg"
-    android:padding="@dimen/padding_small"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_small">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,14 +27,24 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_weight="1"
+            android:layout_weight="3"
+            android:background="@android:color/transparent"
+            android:hint="@string/enter_name_price"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/priceBuy"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="3"
             android:background="@android:color/transparent"
             android:hint="@string/enter_name_price"
             android:inputType="number" />
 
         <Button
             android:id="@+id/addProduct"
-            android:layout_width="wrap_content"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@android:color/transparent"
@@ -43,7 +53,7 @@
 
         <Button
             android:id="@+id/clearList"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight="1"
@@ -52,13 +62,53 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/finalPryceName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:padding="@dimen/padding"
+            android:text="@string/totalPrice"
+            android:textColor="@android:color/black"
+            tools:text="@string/totalPrice" />
+
+        <TextView
+            android:id="@+id/totalPryce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="@dimen/padding"
+            android:textColor="@android:color/black"
+            tools:text="50" />
+
+        <TextView
+            android:id="@+id/currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/padding"
+            android:text="@string/currency"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+
+
     <ListView
         android:id="@+id/items"
-        tools:listitem="@layout/item"
-        android:dividerHeight="@dimen/padding_small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:dividerHeight="@dimen/padding_small"
+        tools:listitem="@layout/item">
+
     </ListView>
+
+
 
 </LinearLayout>

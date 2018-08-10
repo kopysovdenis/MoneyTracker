@@ -51,6 +51,8 @@ public class TestAdapter extends BaseAdapter {
 
             holder.itemName = (TextView) view.findViewById(R.id.nameProduct);
             holder.itemPrice = (TextView) view.findViewById(R.id.price);
+            holder.itemPriceBuy = (TextView) view.findViewById(R.id.priceBuy);
+
 
             view.setTag(holder);
         } else {
@@ -61,6 +63,7 @@ public class TestAdapter extends BaseAdapter {
         if (stringItem != null) {
             holder.itemName.setText(stringItem.name);
             holder.itemPrice.setText(String.valueOf(stringItem.price));
+            holder.itemPriceBuy.setText(String.valueOf(stringItem.priceBuy));
 
         } else {
             holder.itemName.setText(unknown);
@@ -74,6 +77,7 @@ public class TestAdapter extends BaseAdapter {
 
         protected TextView itemName;
         protected TextView itemPrice;
+        protected TextView itemPriceBuy;
 
     }
 }

@@ -6,15 +6,18 @@ import android.os.Parcelable;
 public class Item implements Parcelable{
     public String name;
     public int price;
+    public int priceBuy;
 
-    public Item(String name, int price) {
+    public Item(String name, int price, int priceBuy) {
         this.name = name;
         this.price = price;
+        this.priceBuy = priceBuy;
     }
 
     protected Item(Parcel in) {
         name = in.readString();
         price = in.readInt();
+        priceBuy = in.readInt();
     }
 
     public static final Creator<Item> CREATOR = new Creator<Item>() {
@@ -38,6 +41,7 @@ public class Item implements Parcelable{
     public void writeToParcel(Parcel out, int i) {
         out.writeString(name);
         out.writeInt(price);
+        out.writeInt(priceBuy);
     }
 }
 
