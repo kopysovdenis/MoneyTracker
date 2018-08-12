@@ -1,6 +1,5 @@
 <application>
   <component name="GradleSystemSettings">
     <option name="serviceDirectoryPath" value="C:/.gradle" />
-    <option name="offlineWork" value="true" />
   </component>
 </application>
