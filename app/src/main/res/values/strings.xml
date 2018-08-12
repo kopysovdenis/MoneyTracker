@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Мои покупки</string>
+    <string name="enter_name_product">Название товара</string>
+    <string name="enter_name_price">0</string>
+    <string name="add_product">+</string>
+    <string name="Clear">Очистить</string>
+    <string name="finalPrice">Итого:</string>
+    <string name="totalPrice">Итого:</string>
+    <string name="currency">руб.</string>
+
+</resources>
