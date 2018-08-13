@@ -6,8 +6,12 @@
           <option name="url" value="https://github.com/kopysovdenis/MoneyTracker" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/kopysovdenis/VKontakteMVP" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
-    <option name="cloneParentDir" value="C:\Users\Копысов Денис\StudioProjects" />
+    <option name="cloneParentDir" value="C:\AndroidProjects" />
   </component>
 </application>
